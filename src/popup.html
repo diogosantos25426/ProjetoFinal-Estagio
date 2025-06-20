@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Controle por Gestos</title>
+  <link rel="stylesheet" href="popup.css">
+
   <style>
     body {
       margin: 0;
@@ -55,26 +57,23 @@
 
     .stop { background-color: #d50000; color: #fff; }
     .stop:hover { background-color: #b71c1c; }
+
+    .voice { background-color: #2962ff; color: #fff; }
+    .voice:hover { background-color: #0039cb; }
   </style>
 </head>
 <body>
   <h1>🎯 Controle por Gestos</h1>
   <p class="description">Use os botões abaixo para gerenciar a extensão.</p>
 
-  <button class="btn start" id="startBtn">📷 Ativar Câmera</button>
-  <button class="btn pause" id="pauseBtn">⏸️ Pausar Reconhecimento</button>
+ <button class="btn start" id="startBtn">📷 Ativar Câmera</button>
+ <button class="btn pause" id="pauseBtn">⏸️ Pausar Reconhecimento</button>
   <button class="btn stop" id="stopBtn">🛑 Encerrar Extensão</button>
+  <button class="btn voice" id="voiceBtn">🎤 Escuta "pesquisar"</button>
+  <button class="btn voice" id="ativarVoz">🎙️ Ativar Voz</button>
 
-  <script>
-    const send = (action) => {
-      chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-        chrome.runtime.sendMessage({ action, tabId: tabs[0].id });
-      });
-    };
+ <script type="module" src="./popup.js"></script>
 
-    document.getElementById('startBtn').addEventListener('click', () => send('startGestureControl'));
-    document.getElementById('pauseBtn').addEventListener('click', () => send('pauseGestureControl'));
-    document.getElementById('stopBtn').addEventListener('click', () => send('stopGestureControl'));
-  </script>
+
 </body>
 </html>

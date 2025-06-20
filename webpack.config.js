@@ -3,7 +3,8 @@ const path = require('path');
 module.exports = {
   entry: {
     service_worker: './src/service_worker.js',
-    content: './src/content.js'
+    content: './src/content.js',
+     popup: './src/popup.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist/src'),

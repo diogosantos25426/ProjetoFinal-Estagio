@@ -8,7 +8,9 @@
       "activeTab",
       "scripting",
       "tabs",
+      "microphone",
       "storage",
+     
       "camera"
     ],
     "host_permissions": [
@@ -20,7 +22,7 @@
     "content_scripts": [
       {
         "matches": ["<all_urls>"],
-        "js": ["src/content.js"]
+        "js": ["src/content.js" ]
       }
     ],
     "action": {
